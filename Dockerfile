@@ -9,5 +9,6 @@ WORKDIR /root/
 WORKDIR /app
 COPY --from=build /app /app
 COPY --from=build /app/config.yml.example /app/config.yml.example
+RUN if [ ! -f /app/config.yml ]; then cp /app/config.yml.example /app/config.yml; fi
 WORKDIR /app
 CMD ["./exchange-rate-service"]
