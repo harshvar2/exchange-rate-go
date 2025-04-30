@@ -74,8 +74,4 @@ A backend service in Go (using go-kit) for real-time and historical currency exc
 
 This service is deployed at: [https://exchange-rate-go.onrender.com](https://exchange-rate-go.onrender.com)
 
-You can use the above endpoints directly with this base URL. Render manages the port, so you do not need to specify it.
-
-To redeploy, use the Render dashboard and trigger a manual deploy for the repository `harshvar2/exchange-rate-go` on the `main` branch.
-
 **Note:** Set your `EXCHANGE_API_KEY` in the Render dashboard as an environment variable.
