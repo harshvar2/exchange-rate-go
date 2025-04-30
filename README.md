@@ -9,6 +9,11 @@ A backend service in Go (using go-kit) for real-time and historical currency exc
 - Clean architecture
 - Dockerized
 
+## API Documentation
+
+- **Swagger/OpenAPI docs:** [http://localhost:8080/docs](http://localhost:8080/docs) (when running locally)
+- **Swagger/OpenAPI docs (Render.com):** [https://exchange-rate-go.onrender.com/docs](https://exchange-rate-go.onrender.com/docs)
+
 ## Environment Variables
 
 - `EXCHANGE_API_KEY`: Your exchangerate.host API key (required)
