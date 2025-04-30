@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Exchange Rate Service API
+  version: 1.0.0
+  description: API for currency conversion and historical rates.
+servers:
+  - url: http://localhost:8080
+paths:
+  /convert:
+    get:
+      summary: Convert currency
+      parameters:
+        - in: query
+          name: from
+          schema: { type: string }
+          required: true
+        - in: query
+          name: to
+          schema: { type: string }
+          required: true
+        - in: query
+          name: amount
+          schema: { type: number }
+          required: false
+        - in: query
+          name: date
+          schema: { type: string, format: date }
+          required: false
+      responses:
+        '200':
+          description: Conversion result
+  /rate:
+    get:
+      summary: Get exchange rate
+      parameters:
+        - in: query
+          name: from
+          schema: { type: string }
+          required: true
+        - in: query
+          name: to
+          schema: { type: string }
+          required: true
+        - in: query
+          name: date
+          schema: { type: string, format: date }
+          required: false
+      responses:
+        '200':
+          description: Exchange rate
+  /history:
+    get:
+      summary: Get historical rates
+      parameters:
+        - in: query
+          name: from
+          schema: { type: string }
+          required: true
+        - in: query
+          name: to
+          schema: { type: string }
+          required: true
+        - in: query
+          name: start
+          schema: { type: string, format: date }
+          required: true
+        - in: query
+          name: end
+          schema: { type: string, format: date }
+          required: true
+      responses:
+        '200':
+          description: Historical rates
