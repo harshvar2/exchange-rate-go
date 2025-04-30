@@ -48,15 +48,15 @@ A backend service in Go (using go-kit) for real-time and historical currency exc
 5. Test the endpoints (examples):
    - Convert currency:
      ```sh
-     curl "http://localhost:8080/convert?from=USD&to=INR&amount=100"
+     curl "https://exchange-rate-go.onrender.com/convert?from=USD&to=INR&amount=100"
      ```
    - Get exchange rate:
      ```sh
-     curl "http://localhost:8080/rate?from=USD&to=INR"
+     curl "https://exchange-rate-go.onrender.com/rate?from=USD&to=INR"
      ```
    - Get historical rates:
      ```sh
-     curl "http://localhost:8080/history?from=USD&to=INR&start=2025-01-01&end=2025-01-10"
+     curl "https://exchange-rate-go.onrender.com/history?from=USD&to=INR&start=2025-01-01&end=2025-01-10"
      ```
 
 ## Docker
@@ -70,4 +70,12 @@ A backend service in Go (using go-kit) for real-time and historical currency exc
    docker run -e EXCHANGE_API_KEY=your_api_key_here -p 8080:8080 exchange-rate-service
    ```
 
+## Deploying on Render.com
 
+This service is deployed at: [https://exchange-rate-go.onrender.com](https://exchange-rate-go.onrender.com)
+
+You can use the above endpoints directly with this base URL. Render manages the port, so you do not need to specify it.
+
+To redeploy, use the Render dashboard and trigger a manual deploy for the repository `harshvar2/exchange-rate-go` on the `main` branch.
+
+**Note:** Set your `EXCHANGE_API_KEY` in the Render dashboard as an environment variable.
